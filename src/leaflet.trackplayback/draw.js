@@ -33,8 +33,8 @@ export const Draw = L.Class.extend({
     useImg: false,
     imgUrl: '../../static/images/ship.png',
     showText: false,
-    width: 8,
-    height: 18,
+    width: Math.min((Math.pow(this._map.getZoom(), 2) / 2), 64),
+    height: Math.min((Math.pow(this._map.getZoom(), 2) / 2), 64),
     color: '#00f', // stroke color
     fillColor: '#9FD12D'
   },
