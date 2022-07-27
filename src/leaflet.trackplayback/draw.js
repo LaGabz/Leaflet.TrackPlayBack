@@ -33,8 +33,8 @@ export const Draw = L.Class.extend({
     useImg: false,
     imgUrl: '../../static/images/ship.png',
     showText: false,
-    width: Math.min((Math.pow(this._map.getZoom(), 2) / 2), 64),
-    height: Math.min((Math.pow(this._map.getZoom(), 2) / 2), 64),
+    width: 8,
+    height: 18,
     color: '#00f', // stroke color
     fillColor: '#9FD12D'
   },
@@ -47,7 +47,15 @@ export const Draw = L.Class.extend({
   initialize: function (map, options) {
     L.extend(this.trackPointOptions, options.trackPointOptions)
     L.extend(this.trackLineOptions, options.trackLineOptions)
-    L.extend(this.targetOptions, options.targetOptions)
+    L.extend(this.targetOptions, {
+      useImg: false,
+      imgUrl: '../../static/images/ship.png',
+      showText: false,
+      width: Math.min((Math.pow(map.getZoom(), 2) / 2), 64),
+      height: Math.min((Math.pow(map.getZoom(), 2) / 2), 64),
+      color: '#00f', // stroke color
+      fillColor: '#9FD12D'
+    })
     L.extend(this.toolTipOptions, options.toolTipOptions)
 
     this._showTrackPoint = this.trackPointOptions.isDraw
