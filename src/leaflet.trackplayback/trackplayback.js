@@ -98,6 +98,9 @@ export const TrackPlayBack = L.Class.extend({
     this.draw.hideTrackLine()
     return this
   },
+  changeSize: function (map, drawOptions) {
+    this.draw = new Draw(map, drawOptions)
+  },
   dispose: function () {
     this.clock.off('tick', this._tick)
     this.draw.remove()
