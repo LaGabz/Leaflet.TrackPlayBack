@@ -57,7 +57,7 @@ export const TrackPlayBackControl = L.Control.extend({
   _initContainer: function () {
     var className = 'leaflet-control-playback'
     this._container = L.DomUtil.create('div', className)
-    this._container.style('display: none;')
+    this._container.setAttribute('style', 'display: none;')
     L.DomEvent.disableClickPropagation(this._container)
 
     this._optionsContainer = this._createContainer('optionsContainer', this._container)
