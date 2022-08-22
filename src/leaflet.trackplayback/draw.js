@@ -124,6 +124,9 @@ export const Draw = L.Class.extend({
 
   clear: function () {
     this._clearLayer()
+    if (this._map.hasLayer(this._trackLayer)) {
+      this._map.removeLayer(this._trackLayer)
+    }
     this._bufferTracks = []
   },
 
