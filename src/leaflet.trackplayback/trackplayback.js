@@ -99,7 +99,7 @@ export const TrackPlayBack = L.Class.extend({
     return this
   },
   updateDraw: function (map, drawOptions) {
-    this.draw.remove()
+    this.draw.clear()
     this.draw = new Draw(map, drawOptions)
   },
   dispose: function () {
