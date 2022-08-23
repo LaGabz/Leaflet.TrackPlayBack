@@ -103,6 +103,7 @@ export const TrackPlayBack = L.Class.extend({
     this.draw = new Draw(map, drawOptions)
   },
   removeDraw: function () {
+    this.draw = undefined
     this.draw.remove()
   },
   dispose: function () {
