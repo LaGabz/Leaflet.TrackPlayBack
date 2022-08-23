@@ -99,11 +99,10 @@ export const TrackPlayBack = L.Class.extend({
     return this
   },
   updateDraw: function (map, drawOptions) {
-    this.draw.refreshRemove()
     this.draw = new Draw(map, drawOptions)
   },
   removeDraw: function () {
-    this.draw.remove()
+    this.draw.refreshRemove()
   },
   dispose: function () {
     this.clock.off('tick', this._tick)
