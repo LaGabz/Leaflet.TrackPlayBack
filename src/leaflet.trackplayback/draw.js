@@ -122,6 +122,17 @@ export const Draw = L.Class.extend({
     }
   },
 
+  refreshRemove: function () {
+    this._trackLayer.off('update', this._trackLayerUpdate, this)
+    this._map.off('mousemove', this._onmousemoveEvt, this)
+    if (this._map.hasLayer(this._trackLayer)) {
+      this._map.removeLayer(this._trackLayer)
+    }
+    if (this._map.hasLayer(this._trackPointFeatureGroup)) {
+      this._map.removeLayer(this._trackPointFeatureGroup)
+    }
+  },
+
   clear: function () {
     this._clearLayer()
     this._bufferTracks = []
