@@ -105,6 +105,10 @@ export const TrackPlayBack = L.Class.extend({
   removeDraw: function () {
     this.draw = undefined
     this.draw.remove()
+    this.tracks = null
+    this.draw = null
+    this.trackController = null
+    this.clock = null
   },
   dispose: function () {
     this.clock.off('tick', this._tick)
