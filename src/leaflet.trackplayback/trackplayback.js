@@ -112,6 +112,9 @@ export const TrackPlayBack = L.Class.extend({
     this.trackController = null
     this.clock = null
   },
+  tick: function () {
+    this.clock._tick()
+  },
   _tick: function (e) {
     this.fire('tick', e)
   },
