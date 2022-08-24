@@ -85,7 +85,7 @@ export const Draw = L.Class.extend({
     this._trackLayerUpdate()
   },
 
-  updateDrawing: function (options) {
+  updateDraw: function (options) {
     L.extend(this.trackPointOptions, options.trackPointOptions)
     L.extend(this.trackLineOptions, options.trackLineOptions)
     L.extend(this.targetOptions, options.targetOptions)

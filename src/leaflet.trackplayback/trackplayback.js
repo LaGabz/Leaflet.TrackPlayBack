@@ -98,11 +98,8 @@ export const TrackPlayBack = L.Class.extend({
     this.draw.hideTrackLine()
     return this
   },
-  updateDraw: function (map, drawOptions) {
-    this.draw = new Draw(map, drawOptions)
-  },
-  updateDraw2: function (drawOptions) {
-    this.draw.updateDrawing(drawOptions)
+  updateDraw: function (drawOptions) {
+    this.draw.updateDraw(drawOptions)
   },
   removeDraw: function () {
     this.draw.remove()
