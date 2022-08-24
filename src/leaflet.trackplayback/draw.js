@@ -85,6 +85,13 @@ export const Draw = L.Class.extend({
     this._trackLayerUpdate()
   },
 
+  updateDraw: function (options) {
+    L.extend(this.trackPointOptions, options.trackPointOptions)
+    L.extend(this.trackLineOptions, options.trackLineOptions)
+    L.extend(this.targetOptions, options.targetOptions)
+    L.extend(this.toolTipOptions, options.toolTipOptions)
+  },
+
   drawTrack: function (trackpoints) {
     this._bufferTracks.push(trackpoints)
     this._drawTrack(trackpoints)
@@ -123,12 +130,7 @@ export const Draw = L.Class.extend({
   },
 
   refreshRemove: function () {
-    if (this._map.hasLayer(this._trackLayer)) {
-      this._map.removeLayer(this._trackLayer)
-    }
-    if (this._map.hasLayer(this._trackPointFeatureGroup)) {
-      this._map.removeLayer(this._trackPointFeatureGroup)
-    }
+    this._map.removeLayer(this._trackLayer)
   },
 
   clear: function () {
