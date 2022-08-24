@@ -84,7 +84,7 @@ export const Clock = L.Class.extend({
     this._curTime = time
     this._trackController.drawTracksByTime(this._curTime)
     this.fire('tick', {
-      time: this._curTime
+      time: this._curTime + 1
     })
   },
 
